@@ -1,0 +1,1 @@
+sudo taskset --cpu-list 0 sh -c "LD_PRELOAD=../vpp/build-root/build-vpp_debug-native/vpp/lib/x86_64-linux-gnu/libvcl_ldpreload.so VCL_CONFIG=vcl_srv.conf iperf3 -4 -s"

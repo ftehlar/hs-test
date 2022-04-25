@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## use app socket api
+gdb --args ../vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_echo client log=100 socket-name /run/vpp/app_ns_sockets/2 use-app-socket-api uri quic://10.10.10.1/12344
+
+## use vpp api
+# gdb --args ../vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_echo client log=100 socket-name /tmp/vpp-api-cln.sock uri tcp://10.10.10.1/12344

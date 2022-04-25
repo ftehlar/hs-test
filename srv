@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+make STARTUP_CONF=../hs/startup_srv.conf -C ../vpp run
+
