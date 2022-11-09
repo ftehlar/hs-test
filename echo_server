@@ -2,9 +2,13 @@
 vpp_echo=../vpp/build-root/install-vpp_debug-native/vpp/bin/vpp_echo
 
 ## use app socket api
-#gdb --args $vpp_echo json server log=100 socket-name /run/vpp/app_ns_sockets/1 uri quic://10.10.10.1/12344 nthreads 1 mq-size 16384 nclients 1 quic-streams 1 time sconnect:lastbyte fifo-size 4M TX=0 RX=10G use-app-socket-api
+#gdb --args
+#$vpp_echo server socket-name /run/vpp/app_ns_sockets/1 uri quic://10.10.10.1/12344 nthreads 1 mq-size 16384 nclients 1 quic-streams 1 time sconnect:lastbyte fifo-size 4M TX=0 RX=10G use-app-socket-api
 
-## use vpp api
+gdb -q --args \
+    $vpp_echo server socket-name /run/vpp/app_ns_sockets/1 uri http://10.10.10.1/12344 nclients 1 nthreads 1 use-app-socket-api TX=RX
+
+
 # gdb --args $vpp_echo server log=100 use-app-socket-api socket-name /run/vpp/app_ns_sockets/1 uri tcp://10.10.10.1/12344
 
-$vpp_echo json server log=100 use-app-socket-api socket-name /run/vpp/app_ns_sockets/1 uri udp://10.10.10.1/12344
+#$vpp_echo server log=100 use-app-socket-api socket-name /run/vpp/app_ns_sockets/1 uri udp://10.10.10.1/12344

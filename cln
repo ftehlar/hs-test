@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-make STARTUP_CONF=../hs/startup_clt.conf -C ../vpp run
+make STARTUP_CONF=../hs/startup_clt.conf -C ../vpp $1
