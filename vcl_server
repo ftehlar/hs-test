@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+vcl_test=../vpp/build-root/build-vpp_debug-native/vpp/bin/vcl_test_server
+
+#gdb -q --args \
+#  $vcl_test -p UDP 2200
+
+#sudo VCL_CONFIG=vcl_srv.conf gdb -q --args $vcl_test -p UDP 1234
+sudo VCL_CONFIG=vcl_srv.conf $vcl_test -p UDP 1234

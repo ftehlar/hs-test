@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+vcl_test=../vpp/build-root/build-vpp_debug-native/vpp/bin/vcl_test_client
+
+#sudo gdb -q --args \
+#env VCL_CONFIG=vcl_cln.conf \
+# $vcl_test -b 0x819200 -p UDP 10.10.10.1 2200
+
+sudo VCL_CONFIG=vcl_cln.conf $vcl_test -N 100 -p tcp 10.10.10.1 1234
